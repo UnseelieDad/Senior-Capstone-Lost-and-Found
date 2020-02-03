@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/LostAndFound/v16
+/LostAndFound/LostAndFound/bin/Debug/netstandard2.0
+/LostAndFound/LostAndFound/obj
+/LostAndFound/LostAndFound.Android/bin/Debug
+/LostAndFound/LostAndFound.Android/obj
+/LostAndFound/LostAndFound.Android/LostAndFound.Android.csproj.user
+/LostAndFound/LostAndFound.iOS/obj
