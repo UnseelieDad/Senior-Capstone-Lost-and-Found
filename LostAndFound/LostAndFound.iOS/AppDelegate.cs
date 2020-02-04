@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Amazon;
+using Amazon.Util;
 
 namespace LostAndFound.iOS
 {
@@ -20,8 +22,16 @@ namespace LostAndFound.iOS
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // Config AWS logging
+            var loggingConfig = AWSConfigs.LoggingConfig;
+            loggingConfig.LogMetrics = true;
+            loggingConfig.LogResponses = ResponseLoggingOption.Always;
+            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+            loggingConfig.LogTo = LoggingOptions.SystemDiagnostics;
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

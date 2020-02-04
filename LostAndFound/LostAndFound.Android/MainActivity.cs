@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Amazon;
+using Amazon.Util;
 
 namespace LostAndFound.Droid
 {
@@ -14,6 +16,13 @@ namespace LostAndFound.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            // Logging setup for Amazon AWS
+            var loggingConfig = AWSConfigs.LoggingConfig;
+            loggingConfig.LogMetrics = true;
+            loggingConfig.LogResponses = ResponseLoggingOption.Always;
+            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+            loggingConfig.LogTo = LoggingOptions.SystemDiagnostics;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

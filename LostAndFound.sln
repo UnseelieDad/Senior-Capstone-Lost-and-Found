@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostAndFound.Android", "Los
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostAndFound.iOS", "LostAndFound\LostAndFound.iOS\LostAndFound.iOS.csproj", "{FD784E41-7B96-4D16-9414-6896E6C6ABB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostAndFound", "LostAndFound\LostAndFound\LostAndFound.csproj", "{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LostAndFound", "LostAndFound\LostAndFound\LostAndFound.csproj", "{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
