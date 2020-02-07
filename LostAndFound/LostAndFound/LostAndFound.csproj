@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,8 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.101.31" />
-    <PackageReference Include="AWSSDK.CognitoSync" Version="3.3.100.128" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.101.33" />
+    <PackageReference Include="AWSSDK.CognitoSync" Version="3.3.100.130" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.104.25" />
+    <PackageReference Include="AWSSDK.MobileAnalytics" Version="3.3.100.129" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.110.20" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.118" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
