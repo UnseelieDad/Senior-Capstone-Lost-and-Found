@@ -8,14 +8,17 @@
     <ContentPage.Content>
         <StackLayout Spacing="0" Padding="10,10,10,10">
             <Image
-                x:Name="MenuImage"
-                HeightRequest="150"
+                x:Name="HomePageImage"
                 Margin="0"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="StartAndExpand"
                 Source="LaTechTitle.png"/>
-            
-            
+            <Label x:Name="LostAndFoundLabel" Text="LOST AND FOUND LOGO" TextColor="#003087"  FontAttributes="Bold" FontSize="36" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand"/>
+            <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
+                <Button Text="Report Lost Item" FontSize="22" TextColor="#003087"/>
+                <Button Text="Report Found Item" FontSize="22" TextColor="#003087"/>
+                <Button Text="Admin Login" FontSize="22" TextColor="#003087"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
