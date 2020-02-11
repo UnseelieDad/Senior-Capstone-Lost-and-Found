@@ -5,6 +5,7 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             xmlns:views="clr-namespace:LostAndFound.Views"
+            xmlns:UI="clr-namespace:LostAndFound.UI"
             x:Class="LostAndFound.Views.MainPage">
 
     <MasterDetailPage.Master>
@@ -19,9 +20,8 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <UI:HomePage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
-    
 </MasterDetailPage>

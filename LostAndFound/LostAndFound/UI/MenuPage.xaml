@@ -6,8 +6,17 @@
              mc:Ignorable="d"
              x:Class="LostAndFound.Views.MenuPage"
              Title="Menu">
-             
+<!--Slide Out Hamburger Menu Page-->
     <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout HeightRequest="150" Padding="10,15,10,15" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image
+                x:Name="MenuImage"
+                HeightRequest="150"
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Source="LaTechLogo.png"/>
+        </StackLayout>
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True">
             <d:ListView.ItemsSource>
