@@ -162,4 +162,10 @@
       <Name>LostAndFound</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LaTechTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LaTechLogo.png" />
+  </ItemGroup>
 </Project>
