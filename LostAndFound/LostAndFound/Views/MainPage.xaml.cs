@@ -36,6 +36,12 @@ namespace LostAndFound.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Pin:
+                        MenuPages.Add(id, new NavigationPage(new PinPage()));
+                        break;
+                    case (int)MenuItemType.Admin:
+                        MenuPages.Add(id, new NavigationPage(new AdminPage()));
+                        break;
                 }
             }
 

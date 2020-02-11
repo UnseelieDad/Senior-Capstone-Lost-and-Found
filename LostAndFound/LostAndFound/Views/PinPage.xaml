@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LostAndFound.Views.PinPage"
+             Title="Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry IsPassword="True" 
+                   Keyboard="Numeric"
+                   MaxLength="6"
+                   Placeholder="PIN"
+                   Completed="Entry_Completed"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="200"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
