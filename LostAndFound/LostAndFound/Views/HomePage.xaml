@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
+             x:Class="LostAndFound.UI.HomePage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
+            <Image
+                x:Name="HomePageImage"
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand"
+                Source="LaTechTitle.png"/>
+            <StackLayout Padding="35,0,35,0" Spacing="0" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <Frame  IsClippedToBounds="True" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,0,0,0" >
+                    <Label x:Name="LostAndFoundLabel" Text="All items should be turned in or picked up from the administration desk in Nethken 132." TextColor="#003087"  FontAttributes="Bold" FontSize="24" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
+                <Button Text="Report An Item Lost" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Lost_Button_Clicked"/>
+                <Button Text="Report An Item Found" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
