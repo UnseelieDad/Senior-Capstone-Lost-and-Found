@@ -7,8 +7,11 @@ namespace LostAndFound.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Pin,
+        Admin
     }
+
     public class HomeMenuItem
     {
         public MenuItemType Id { get; set; }

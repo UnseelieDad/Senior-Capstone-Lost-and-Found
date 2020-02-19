@@ -4,19 +4,21 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
              x:Class="LostAndFound.Views.ItemsPage"
-             Title="{Binding Title}"
+             Title="Your Lost Items"
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="SUBMIT NEW ITEM" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ListView x:Name="ItemsListView"
+        <ListView x:Name="LostItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
+                BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}"
                 RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -35,10 +37,11 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10">
+                        <StackLayout x:Name="LostItemStackLayout" Padding="10">
                             <Label Text="{Binding Text}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
+                                FontAttributes="Bold"
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
                             <Label Text="{Binding Description}" 

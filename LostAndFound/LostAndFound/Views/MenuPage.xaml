@@ -4,10 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
              x:Class="LostAndFound.Views.MenuPage"
              Title="Menu">
-             
+<!--Slide Out Hamburger Menu Page-->
     <StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout HeightRequest="150" Padding="10,15,10,15" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image
+                x:Name="MenuImage"
+                HeightRequest="150"
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Source="LaTechLogo.png"/>
+        </StackLayout>
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True">
             <d:ListView.ItemsSource>
@@ -20,7 +30,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Label Text="{Binding Title}" d:Text="{Binding .}" FontSize="20"/>
+                            <Label Text="{Binding Title}" d:Text="{Binding .}" FontSize="26" FontAttributes="Bold"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
