@@ -29,7 +29,6 @@ namespace LostAndFound.Views
             {
                 if (entry.Text == Pin)
                 {
-                    await Backend.GetLostItems();
                     await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
                 }
             }

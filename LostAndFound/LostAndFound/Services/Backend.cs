@@ -67,11 +67,12 @@ namespace LostAndFound.Services
         public static async Task<List<Item>> GetLostItems()
         {
             var response = await DoRequest<Response>(HttpMethod.Get, lostItemsUrl);
+            response.Body = response.Body.Replace("0000-00-00", "0001-01-01");
             var obj = JsonConvert.DeserializeObject<List<Item>>(response.Body, new JsonSerializerSettings()
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat
             });
-            return null;
+            return obj;
         }
 
         private static HttpRequestMessage CreateHttpRequest(HttpMethod method, string url, object body = null)
