@@ -59,11 +59,6 @@ namespace LostAndFound.Services
             return null;
         }
 
-        public static async Task<object> ReportLostItem(object item)
-        {
-            return null;
-        }
-
         public static async Task<List<Item>> GetLostItems()
         {
             var response = await DoRequest<Response>(HttpMethod.Get, lostItemsUrl);
