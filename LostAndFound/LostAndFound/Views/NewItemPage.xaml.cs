@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using LostAndFound.Models;
+using LostAndFound.Services;
 
 namespace LostAndFound.Views
 {
@@ -33,13 +34,14 @@ namespace LostAndFound.Views
                 return;
             }
             MessagingCenter.Send(this, "AddItem", Item);
+            await Backend.SubmitLostItem(Item);
             await DisplayAlert("Item Submitted", "Thank you for submitting a lost item. When your item is found you will recieve an email with more details. \n Questions? Please go to Netheken 132.", "Okay");
             await Navigation.PopToRootAsync();
         }
 
-        //async void Cancel_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PopToRootAsync();
-        //}
+        async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
+        }
     }
 }
