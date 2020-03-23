@@ -1,0 +1,11 @@
+{
+  "email": "something@somewhere.com",
+  "description": "look",
+  "color": "red",
+  "type": "object",
+  "location": "place",
+  "date_lost": "2020-03-20",
+  "status": "lost",
+  "first_name": "John",
+  "last_name": "Doe"
+}
