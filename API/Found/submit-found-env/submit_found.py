@@ -1,15 +1,16 @@
 import logging
-import rds_config
 import pymysql
 import json
 import sys
+import boto3
 
 #rds settings
 
+client = boto3.client('ssm', region_name='us-east-2')
 rds_host = "capstonedb.ceg78zil1yli.us-east-2.rds.amazonaws.com"
-name = rds_config.db_username
-password = rds_config.db_password
-db_name = rds_config.db_name
+name = client.get_parameter(Name='db_user', WithDecryption=True)['Parameter']['Value']
+password = client.get_parameter(Name='db_password', WithDecryption=True)['Parameter']['Value']
+db_name = client.get_parameter(Name='db_name', WithDecryption=True)['Parameter']['Value']
 
 # logging
 logger = logging.getLogger()
