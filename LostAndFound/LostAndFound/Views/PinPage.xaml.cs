@@ -29,21 +29,6 @@ namespace LostAndFound.Views
             {
                 if (entry.Text == Pin)
                 {
-                    var item = new Item()
-                    {
-                        Color = "blue",
-                        Email = "mememcgee@wemail.com",
-                        Description = "size 24 timbs",
-                        CreateDate = DateTime.Now,
-                        Type = "shoe",
-                        Location = "basement",
-                        DateLost = DateTime.Now,
-                        FirstName = "Bob",
-                        LastName = "Dylan",
-                        Status = "Lost"
-                    };
-                    await Backend.SubmitLostItem(item);
-
                     await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
                 }
             }
