@@ -14,12 +14,26 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="Email" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.Email}" Placeholder="Your Email" FontSize="Small" />
+                <Label Text="Description" FontSize="Medium" FontAttributes="Bold" />
+                <Editor Text="{Binding Item.Description}" Placeholder="Item Description" FontSize="Small" Margin="0" />
+                <Label Text="Color" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.Color}" Placeholder="Item Color" FontSize="Small" />
+                <Label Text="Type" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.Type}" Placeholder="What kind of item? Ex. Shoes, Phone, etc." FontSize="Small" />
+                <Label Text="Location" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.Location}" Placeholder="Location item was lost" FontSize="Small"/>
+                <Label Text="Date Lost" FontSize="Medium" FontAttributes="Bold" />
+                <DatePicker HorizontalOptions="Fill" Date="{Binding Item.DateLost}" MinimumDate="01/01/2020"/>
+                <Label Text="First Name" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.FirstName}" Placeholder="First Name" FontSize="Small"/>
+                <Label Text="Last Name" FontSize="Medium" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.LastName}" Placeholder="Last Name" FontSize="Small"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
     
 </ContentPage>

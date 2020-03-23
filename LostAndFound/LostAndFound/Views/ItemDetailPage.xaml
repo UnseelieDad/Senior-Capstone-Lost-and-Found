@@ -8,11 +8,24 @@
              x:Class="LostAndFound.Views.ItemDetailPage"
              Title="{Binding Title}">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
-    </StackLayout>
-    
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Email:" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding Item.Email}"  FontSize="Small"/>
+            <Label Text="Description:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="Color:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.Color}" FontSize="Small" />
+            <Label Text="Type:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.Type}" FontSize="Small" />
+            <Label Text="Location:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.Location}" FontSize="Small"/>
+            <Label Text="Date Lost:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.DateLost}" FontSize="Small"/>
+            <Label Text="First Name:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.FirstName}" FontSize="Small"/>
+            <Label Text="Last Name:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Item.LastName}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
