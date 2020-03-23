@@ -21,7 +21,7 @@ namespace LostAndFound.Services
 
         public static async Task<T> DoRequest<T>(HttpMethod method, string url, object body = null)
         {
-            using (var request = CreateHttpRequest(HttpMethod.Get, url))
+            using (var request = CreateHttpRequest(method, url, body))
             {
                 try
                 {
@@ -73,6 +73,12 @@ namespace LostAndFound.Services
                 DateFormatHandling = DateFormatHandling.IsoDateFormat
             });
             return obj;
+        }
+
+        public static async Task<Response> SubmitLostItem(Item i)
+        {
+            var response = await DoRequest<Response>(HttpMethod.Post, lostItemsUrl, i);
+            return response;
         }
 
         private static HttpRequestMessage CreateHttpRequest(HttpMethod method, string url, object body = null)

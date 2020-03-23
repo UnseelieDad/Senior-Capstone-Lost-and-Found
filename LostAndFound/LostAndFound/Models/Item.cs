@@ -5,13 +5,28 @@ namespace LostAndFound.Models
 {
     public class Item
     {
+        [JsonProperty("id")]
         public string Id { get; set; }
+
+        [JsonIgnore]
         public string Text { get; set; }
+
+        [JsonProperty("description")]
         public string Description { get; set; }
+
+        [JsonProperty("email")]
         public string Email { get; set; }
+
+        [JsonProperty("color")]
         public string Color { get; set; }
+
+        [JsonProperty("type")]
         public string Type { get; set; }
+
+        [JsonProperty("location")]
         public string Location { get; set; }
+
+        [JsonProperty("status")]
         public string Status { get; set; }
 
         [JsonProperty("first_name")]
