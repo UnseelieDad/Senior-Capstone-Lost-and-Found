@@ -5,7 +5,6 @@ namespace LostAndFound.Models
     public class Item
     {
         public string id { get; set; }
-        public string Text { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
         public DateTime CreateDate { get; set; }
