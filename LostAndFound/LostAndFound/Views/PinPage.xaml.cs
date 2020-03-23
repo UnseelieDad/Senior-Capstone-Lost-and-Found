@@ -1,4 +1,5 @@
 ﻿using LostAndFound.Models;
+using LostAndFound.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace LostAndFound.Views
             {
                 if (entry.Text == Pin)
                 {
+                    await Backend.GetLostItems();
                     await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
                 }
             }
