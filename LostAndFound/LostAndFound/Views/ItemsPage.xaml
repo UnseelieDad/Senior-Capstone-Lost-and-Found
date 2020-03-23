@@ -13,7 +13,6 @@
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
-                BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}"
                 RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -23,13 +22,17 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout x:Name="LostItemStackLayout" Padding="10">
-                            <Label Text="{Binding Text}"
+                            <Label Text="{Binding Type}" 
+                                d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 FontAttributes="Bold"
                                 Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Description}"
-                                d:Text="Item descripton"
+                                FontSize="18" />
+                            <Label Text="{Binding Description}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                            <Label Text="{Binding Location}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />

@@ -6,7 +6,7 @@ namespace LostAndFound.Models
     public class Item
     {
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public string id { get; set; }
 
         [JsonIgnore]
         public string Text { get; set; }
