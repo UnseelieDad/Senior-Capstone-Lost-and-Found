@@ -50,6 +50,17 @@ namespace LostAndFound.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            {
+                if (viewModel.Items.Count == 0)
+                {
+                    LostItemsListView.IsVisible = false;
+                    NoLostItemsLabel.IsVisible = true;
+                }
+
+                return false;
+            });
         }
     }
 }
