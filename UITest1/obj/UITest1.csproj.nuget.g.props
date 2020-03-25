@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\roboe\.nuget\packages\;C:\Microsoft\Xamarin\NuGet\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.4.0</NuGetToolVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)nunit3testadapter\3.16.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('$(NuGetPackageRoot)nunit3testadapter\3.16.1\build\net35\NUnit3TestAdapter.props')" />
+    <Import Project="C:\Microsoft\Xamarin\NuGet\nunit\3.12.0\build\NUnit.props" Condition="Exists('C:\Microsoft\Xamarin\NuGet\nunit\3.12.0\build\NUnit.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgXamarin_UITest Condition=" '$(PkgXamarin_UITest)' == '' ">C:\Users\roboe\.nuget\packages\xamarin.uitest\3.0.7</PkgXamarin_UITest>
+    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\roboe\.nuget\packages\entityframework\6.0.0</PkgEntityFramework>
+    <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">C:\Users\roboe\.nuget\packages\system.data.sqlite.ef6\1.0.97</PkgSystem_Data_SQLite_EF6>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.core\3.3.104.23</PkgAWSSDK_Core>
+    <PkgAWSSDK_SimpleNotificationService Condition=" '$(PkgAWSSDK_SimpleNotificationService)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.simplenotificationservice\3.3.101.118</PkgAWSSDK_SimpleNotificationService>
+    <PkgAWSSDK_SecurityToken Condition=" '$(PkgAWSSDK_SecurityToken)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.securitytoken\3.3.104.28</PkgAWSSDK_SecurityToken>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.s3\3.3.110.20</PkgAWSSDK_S3>
+    <PkgAWSSDK_MobileAnalytics Condition=" '$(PkgAWSSDK_MobileAnalytics)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.mobileanalytics\3.3.100.129</PkgAWSSDK_MobileAnalytics>
+    <PkgAWSSDK_DynamoDBv2 Condition=" '$(PkgAWSSDK_DynamoDBv2)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.dynamodbv2\3.3.104.25</PkgAWSSDK_DynamoDBv2>
+    <PkgAWSSDK_CognitoIdentity Condition=" '$(PkgAWSSDK_CognitoIdentity)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.cognitoidentity\3.3.101.33</PkgAWSSDK_CognitoIdentity>
+    <PkgAWSSDK_CognitoSync Condition=" '$(PkgAWSSDK_CognitoSync)' == '' ">C:\Users\roboe\.nuget\packages\awssdk.cognitosync\3.3.100.130</PkgAWSSDK_CognitoSync>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\UITest1\\UITest1.csproj": {}
+  },
+  "projects": {
+    "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\LostAndFound.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
+        "projectName": "LostAndFound",
+        "projectPath": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\LostAndFound.csproj",
+        "packagesPath": "C:\\Users\\roboe\\.nuget\\packages\\",
+        "outputPath": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\roboe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AWSSDK.CognitoIdentity": {
+              "target": "Package",
+              "version": "[3.3.101.33, )"
+            },
+            "AWSSDK.CognitoSync": {
+              "target": "Package",
+              "version": "[3.3.100.130, )"
+            },
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.3.104.25, )"
+            },
+            "AWSSDK.MobileAnalytics": {
+              "target": "Package",
+              "version": "[3.3.100.129, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.3.110.20, )"
+            },
+            "AWSSDK.SimpleNotificationService": {
+              "target": "Package",
+              "version": "[3.3.101.118, )"
+            },
+            "Amazon.Lambda.Core": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.3.0.908675, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\UITest1\\UITest1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\UITest1\\UITest1.csproj",
+        "projectName": "UITest1",
+        "projectPath": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\UITest1\\UITest1.csproj",
+        "packagesPath": "C:\\Users\\roboe\\.nuget\\packages\\",
+        "outputPath": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\UITest1\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\roboe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\LostAndFound.csproj": {
+                "projectPath": "D:\\LA Tech Stuff\\Lost and Found App\\Senior-Capstone-Lost-and-Found\\LostAndFound\\LostAndFound\\LostAndFound.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.16.1, )"
+            },
+            "Xamarin.UITest": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LostAndFound.iOS", "LostAnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LostAndFound", "LostAndFound\LostAndFound\LostAndFound.csproj", "{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITest1", "UITest1\UITest1.csproj", "{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{CA9ADD06-9A65-48DB-831A-466FE3E7B4D9}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|iPhone.Build.0 = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1190E3FB-CB12-4005-B32B-590A2BBC1D7B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
