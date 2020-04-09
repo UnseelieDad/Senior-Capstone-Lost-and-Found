@@ -34,7 +34,6 @@ def handler(event, context):
 
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM Items i WHERE i.id in (SELECT FoundItem from MatchedItems mi)")
-        connection.commit()
         for row in cursor:
             found_match = {
                 "id": row[0],
