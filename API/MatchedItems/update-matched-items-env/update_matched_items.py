@@ -27,32 +27,60 @@ logger.info("SUCCESS: COnnection to RDS mysql instance succeeded.")
 # executes upon API event
 def handler(event, context):
 
-    data = {
-        'email': event['email'],
-        'description': event['description'],
-        'color': event['color'],
-        'type': event['type'],
-        'location': event['location'],
-        'date_lost': event['date_lost'],
-        'status': event['status'],
-        'first_name': event['first_name'],
-        'last_name': event['last_name']
-    }
+    
+    lost_items = []
+    found_items = []
+    matches = []
     with connection.cursor() as cursor:
         
-        sql = "insert into Item (Email, Description, Color, Type, Location, DateLost, Status, FirstName, LastName) values (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(sql, (data['email'], data['description'], data['color'], data['type'], data['location'], data['date_lost'], data['status'], data['first_name'], data['last_name'])) 
+        cursor.execute("SELECT * FROM Items i WHERE i.id in (SELECT Item from Lost l)")
+        for row in cursor:
+            lost_item = {
+                "id": row[0],
+                "email": row[1],
+                "description": row[2],
+                "create_date": str(row[3]),
+                "color": row[4],
+                "type": row[5],
+                "location": row[6],
+                "date_lost": str(row[7])
+            }
+            lost_items.append(lost_item)
 
-        cursor.execute("select max(id) from Item")
-        
-        item_id = cursor.fetchone()[0]
+        cursor.execute("SELECT * FROM Items i WHERE i.id (SELECT Item from Found f)")
+        for row in cursor:
+            found_item = {
+                "id": row[0],
+                "email": row[1],
+                "description": row[2],
+                "create_date": str(row[3]),
+                "color": row[4],
+                "type": row[5],
+                "location": row[6],
+                "date_lost": str(row[7])
+            }
+            found_items.append(found_item)
 
-        sql = "insert into Lost (Item) values (%s)"
-        cursor.execute(sql, (item_id))
-        
+        # find potential matches
+        for litem in lost_items:
+            for fitem in found_items:
+                match_count = 0.0
+                for lattr, fattr in zip(litem, fitem):
+                    if lattr.value() == fattr.value():
+                        match_count += 1
+                if match_count/len(litem) >= 0.75:
+                    match = {
+                        "FoundItem": fitem["id"],
+                        "LostItem": litem["id"]
+                    }
+                    matches.append(match)
+                    sql = "Insert into MatchedItem (FoundItem, LostItem) values (%s, %s)"
+                    cursor.execute(sql, (match["FoundItem"], match["LostItem"]))
+
+
         connection.commit()
 
     return {
         'statusCode': 200,
-        'body': json.dumps(data)
+        'body': json.dumps(matches)
     }
