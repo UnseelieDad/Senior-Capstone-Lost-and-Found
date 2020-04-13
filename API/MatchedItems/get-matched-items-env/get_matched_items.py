@@ -33,7 +33,7 @@ def handler(event, context):
     records = []
 
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM Items i WHERE i.id in (SELECT FoundItem from MatchedItems mi)")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Found f WHERE f.id in (SELECT FoundItem from MatchedItems mi))")
         for row in cursor:
             found_match = {
                 "id": row[0],
@@ -47,7 +47,7 @@ def handler(event, context):
             }
             found_matches.append(found_match)
 
-        cursor.execute("SELECT * FROM Items i WHERE i.id (SELECT LostItem from MatchedItems mi)")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Lost l WHERE l.id in (SELECT LostItem from MatchedItems mi))")
         connection.commit()
         for row in cursor:
             lost_match = {
@@ -62,24 +62,24 @@ def handler(event, context):
             }
             lost_matches.append(lost_match)
 
-        for frow, lrow in zip(found_matches, lost_matches):
+        for fmatch, lmatch in zip(found_matches, lost_matches):
             record = {
-                "found_id": frow[0],
-                "found_email": frow[1],
-                "found_description": frow[2],
-                "found_create_date": str(frow[3]),
-                "found_color": frow[4],
-                "found_type": frow[5],
-                "found_location": frow[6],
-                "date_found": str(frow[7]),
-                "lost_id": lrow[0],
-                "lost_email": lrow[1],
-                "lost_description": lrow[2],
-                "lost_create_date": str(lrow[3]),
-                "lost_color": lrow[4],
-                "lost_type": lrow[5],
-                "lost_location": lrow[6],
-                "date_lost": str(lrow[7])
+                "found_id": fmatch["id"],
+                "found_email": fmatch["email"],
+                "found_description": fmatch["description"],
+                "found_create_date": fmatch["create_date"],
+                "found_color": fmatch["color"],
+                "found_type": fmatch["type"],
+                "found_location": fmatch["location"],
+                "date_found": fmatch["date_lost"],
+                "lost_id": lmatch["id"],
+                "lost_email": lmatch["email"],
+                "lost_description": lmatch["description"],
+                "lost_create_date": lmatch["create_date"],
+                "lost_color": lmatch["color"],
+                "lost_type": lmatch["type"],
+                "lost_location": lmatch["location"],
+                "date_lost": lmatch["date_lost"]
             }
             records.append(record)
 

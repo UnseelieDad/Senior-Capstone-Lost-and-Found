@@ -32,51 +32,42 @@ def handler(event, context):
     found_items = []
     matches = []
     with connection.cursor() as cursor:
+        cursor.execute("DELETE FROM MatchedItems")
         
-        cursor.execute("SELECT * FROM Items i WHERE i.id in (SELECT Item from Lost l)")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item from Lost l)")
         for row in cursor:
             lost_item = {
                 "id": row[0],
-                "email": row[1],
-                "description": row[2],
-                "create_date": str(row[3]),
                 "color": row[4],
                 "type": row[5],
                 "location": row[6],
-                "date_lost": str(row[7])
             }
             lost_items.append(lost_item)
 
-        cursor.execute("SELECT * FROM Items i WHERE i.id (SELECT Item from Found f)")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item from Found f)")
         for row in cursor:
             found_item = {
                 "id": row[0],
-                "email": row[1],
-                "description": row[2],
-                "create_date": str(row[3]),
                 "color": row[4],
                 "type": row[5],
                 "location": row[6],
-                "date_lost": str(row[7])
             }
             found_items.append(found_item)
 
         # find potential matches
         for litem in lost_items:
             for fitem in found_items:
-                match_count = 0.0
-                for lattr, fattr in zip(litem, fitem):
-                    if lattr.value() == fattr.value():
-                        match_count += 1
-                if match_count/len(litem) >= 0.75:
+                if fitem['color'] == litem['color'] and fitem['type'] == litem['type'] and fitem['location'] == litem['location']:
                     match = {
                         "FoundItem": fitem["id"],
                         "LostItem": litem["id"]
                     }
                     matches.append(match)
-                    sql = "Insert into MatchedItem (FoundItem, LostItem) values (%s, %s)"
-                    cursor.execute(sql, (match["FoundItem"], match["LostItem"]))
-
+                    cursor.execute("Select f.id From Found f Where f.Item = {}".format(match["FoundItem"]))
+                    found_item = cursor.fetchone()
+                    cursor.execute("Select l.id From Lost l Where l.Item = {}".format(match["LostItem"]))
+                    lost_item = cursor.fetchone()
+                    cursor.execute("Insert into MatchedItems (FoundItem, LostItem) values (%s, %s)", (found_item, lost_item))
 
         connection.commit()
 

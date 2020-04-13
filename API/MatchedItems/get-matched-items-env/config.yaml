@@ -1,7 +1,7 @@
 region: us-east-2
 
 function_name: AccessMySQLDB
-handler: get_lost.handler
+handler: get_matched_items.handler
 description: My first lambda function
 runtime: python3.8
 role: MySQLDBAccess
