@@ -17,9 +17,14 @@ namespace LostAndFound.Views
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void LostButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ItemsPage());
+        }
+
+        private async void MatchedButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MatchedItemsPage());
         }
     }
 }

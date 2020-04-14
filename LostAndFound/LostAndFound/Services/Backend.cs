@@ -13,6 +13,7 @@ namespace LostAndFound.Services
         private static readonly HttpClient client;
         private static readonly string lostItemsUrl = "https://7g66xjlz37.execute-api.us-east-2.amazonaws.com/test/lostitems";
         private static readonly string foundItemsUrl = "https://7g66xjlz37.execute-api.us-east-2.amazonaws.com/test/founditems";
+        private static readonly string matchedItemsUrl = "https://7g66xjlz37.execute-api.us-east-2.amazonaws.com/test/matcheditems";
         private static readonly string adminUrl = "https://7g66xjlz37.execute-api.us-east-2.amazonaws.com/test/adminlogin";
 
         static Backend()
@@ -66,6 +67,18 @@ namespace LostAndFound.Services
         public static async Task<List<Item>> GetLostItems()
         {
             var response = await DoRequest<List<Item>>(HttpMethod.Get, lostItemsUrl);
+            return response;
+        }
+
+        public static async Task<List<Item>> GetFoundItems()
+        {
+            var response = await DoRequest<List<Item>>(HttpMethod.Get, foundItemsUrl);
+            return response;
+        }
+
+        public static async Task<List<MatchedItem>> GetMatchedItems()
+        {
+            var response = await DoRequest<List<MatchedItem>>(HttpMethod.Get, matchedItemsUrl);
             return response;
         }
 

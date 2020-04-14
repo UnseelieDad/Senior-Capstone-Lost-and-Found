@@ -13,8 +13,8 @@
                 HorizontalOptions="CenterAndExpand" />
 
             <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
-                <Button Text="View Lost Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Button_Clicked"/>
-                <Button Text="Sample Text" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0"/>
+                <Button Text="View Lost Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="LostButtonClicked"/>
+                <Button Text="View Matched Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="MatchedButtonClicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

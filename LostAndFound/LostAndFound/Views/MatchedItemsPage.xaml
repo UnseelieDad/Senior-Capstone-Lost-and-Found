@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LostAndFound.Views.MatchedItemsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MatchedItemsListView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout x:Name="LostItemStackLayout" Padding="10">
+                                <Label Text="{Binding FoundType}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                FontAttributes="Bold"
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+                                <Label Text="{Binding FoundDescription}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                <Label Text="{Binding FoundLocation}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="NoLostItemsLabel" Text="No lost items." IsVisible="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
