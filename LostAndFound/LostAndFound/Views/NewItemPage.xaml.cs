@@ -33,9 +33,10 @@ namespace LostAndFound.Views
                 await DisplayAlert("Empty Fields", "Please fill out all fields for the lost item.", "Okay");
                 return;
             }
-            MessagingCenter.Send(this, "AddItem", Item);
+            //Not needed because it is not being added to a list, will be needed in the admin area
+            ///MessagingCenter.Send(this, "AddItem", Item);
             await Backend.SubmitLostItem(Item);
-            await DisplayAlert("Item Submitted", "Thank you for submitting a lost item. When your item is found you will recieve an email with more details. \n Questions? Please go to Netheken 132.", "Okay");
+            await DisplayAlert("Item Submitted", "Thank you for submitting a lost item. When your item is found you will recieve an email with more details. \n \n Questions? Please go to Netheken 132.", "Okay");
             await Navigation.PopToRootAsync();
         }
 
