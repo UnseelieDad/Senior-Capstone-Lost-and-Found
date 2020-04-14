@@ -27,7 +27,8 @@ namespace LostAndFound.Views
         {
             if (sender is Entry entry)
             {
-                var response = await Backend.AdminLogin(entry.Text);
+                var encrypted = HashUtilities.GetHashFromString(entry.Text);
+                var response = await Backend.AdminLogin(encrypted);
                 if (!response.Body.Equals("Incorrect PIN provided"))
                 {
                     await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
