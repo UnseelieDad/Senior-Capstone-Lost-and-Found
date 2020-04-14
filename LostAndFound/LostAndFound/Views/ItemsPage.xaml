@@ -8,11 +8,6 @@
              x:Class="LostAndFound.Views.ItemsPage"
              Title="Your Lost Items"
              x:Name="BrowseItemsPage">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="SUBMIT NEW ITEM" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>
-
     <StackLayout>
         <ListView x:Name="LostItemsListView"
                 ItemsSource="{Binding Items}"
@@ -46,6 +41,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Label x:Name="NoLostItemsLabel" Text="No lost items." IsVisible="False"/>
     </StackLayout>
     
 </ContentPage>

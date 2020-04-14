@@ -4,12 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
              x:Class="LostAndFound.Views.AdminPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="0" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
+                <Button Text="View Lost Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Button_Clicked"/>
+                <Button Text="Sample Text" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

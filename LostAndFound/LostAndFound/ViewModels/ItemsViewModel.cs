@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using LostAndFound.Models;
 using LostAndFound.Views;
+using LostAndFound.Services;
 
 namespace LostAndFound.ViewModels
 {
@@ -20,12 +21,12 @@ namespace LostAndFound.ViewModels
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            /*MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as Item;
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
-            });
+            });*/
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -38,7 +39,7 @@ namespace LostAndFound.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await Backend.GetLostItems();
                 foreach (var item in items)
                 {
                     Items.Add(item);

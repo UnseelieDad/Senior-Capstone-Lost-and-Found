@@ -14,6 +14,7 @@ namespace LostAndFound.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : MasterDetailPage
     {
+        // Test comment 2
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
         public MainPage()
         {
