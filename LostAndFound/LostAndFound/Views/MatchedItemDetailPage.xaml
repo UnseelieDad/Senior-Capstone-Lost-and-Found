@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
+             x:Class="LostAndFound.Views.MatchedItemDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Spacing="5" Padding="10,5,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}">
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <StackLayout Spacing="10" Padding="5">
+                    <Label Text="Lost Item" FontSize="Large" FontAttributes="Bold"/>
+                    <Label Text="Email:" FontSize="Medium" FontAttributes="Bold"/>
+                    <Label Text="{Binding Item.LostEmail}"  FontSize="Small"/>
+                    <Label Text="Description:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.LostDescription}" FontSize="Small"/>
+                    <Label Text="Color:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.LostColor}" FontSize="Small" />
+                    <Label Text="Type:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.LostType}" FontSize="Small" />
+                    <Label Text="Location:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.LostLocation}" FontSize="Small"/>
+                    <Label Text="Date Lost:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.DateLost}" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Spacing="10" Padding="5">
+                    <Label Text="Found Item" FontSize="Large" FontAttributes="Bold"/>
+                    <Label Text="Email:" FontSize="Medium" FontAttributes="Bold"/>
+                    <Label Text="{Binding Item.FoundEmail}"  FontSize="Small"/>
+                    <Label Text="Description:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.FoundDescription}" FontSize="Small"/>
+                    <Label Text="Color:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.FoundColor}" FontSize="Small" />
+                    <Label Text="Type:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.FoundType}" FontSize="Small" />
+                    <Label Text="Location:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.FoundLocation}" FontSize="Small"/>
+                    <Label Text="Date Found:" FontSize="Medium" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.DateFound}" FontSize="Small"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Confirm Match" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
