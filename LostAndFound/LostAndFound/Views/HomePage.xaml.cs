@@ -21,5 +21,10 @@ namespace LostAndFound.UI
         {
             await Navigation.PushAsync(new NewItemPage());
         }
+
+        async private void Found_Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FoundItemPage());
+        }
     }
 }
