@@ -75,6 +75,12 @@ namespace LostAndFound.Services
             return response;
         }
 
+        public static async Task<Response> SubmitFoundItem(Item i)
+        {
+            var response = await DoRequest<Response>(HttpMethod.Post, foundItemsUrl, i);
+            return response;
+        }
+
         private static HttpRequestMessage CreateHttpRequest(HttpMethod method, string url, object body = null)
         {
             var request = new HttpRequestMessage(method, url);
