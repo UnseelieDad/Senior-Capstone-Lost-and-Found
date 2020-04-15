@@ -9,7 +9,8 @@ namespace LostAndFound.Models
         Browse,
         About,
         Pin,
-        Admin
+        Admin,
+        ContactUs
     }
 
     public class HomeMenuItem
