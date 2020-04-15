@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using LostAndFound.Models;
+using LostAndFound.Views.UIStandards;
 
 namespace LostAndFound.Views
 {
@@ -20,6 +21,8 @@ namespace LostAndFound.Views
         {
             InitializeComponent();
 
+            detailPage.BarBackgroundColor = ColorConstants.TechBlue;
+
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
@@ -32,16 +35,19 @@ namespace LostAndFound.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()) { BarBackgroundColor = ColorConstants.TechBlue });
                         break;
                     case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        MenuPages.Add(id, new NavigationPage(new AboutPage()) { BarBackgroundColor = ColorConstants.TechBlue });
                         break;
                     case (int)MenuItemType.Pin:
-                        MenuPages.Add(id, new NavigationPage(new PinPage()));
+                        MenuPages.Add(id, new NavigationPage(new PinPage()) { BarBackgroundColor = ColorConstants.TechBlue });
                         break;
                     case (int)MenuItemType.Admin:
-                        MenuPages.Add(id, new NavigationPage(new AdminPage()));
+                        MenuPages.Add(id, new NavigationPage(new AdminPage()) { BarBackgroundColor = ColorConstants.TechBlue });
+                        break;
+                    case (int)MenuItemType.ContactUs:
+                        MenuPages.Add(id, new NavigationPage(new ContactUsPage()) { BarBackgroundColor = ColorConstants.TechBlue });
                         break;
                 }
             }
