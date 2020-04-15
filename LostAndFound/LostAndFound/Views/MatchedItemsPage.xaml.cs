@@ -29,7 +29,7 @@ namespace LostAndFound.Views
             if (item == null)
                 return;
 
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new MatchedItemDetailPage(new MatchedItemDetailViewModel(item)));
 
             // Manually deselect item.
             MatchedItemsListView.SelectedItem = null;

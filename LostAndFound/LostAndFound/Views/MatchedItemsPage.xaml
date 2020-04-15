@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LostAndFound.Views.MatchedItemsPage">
+             x:Class="LostAndFound.Views.MatchedItemsPage"
+             Title="Matched Items">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="MatchedItemsListView"
@@ -19,21 +20,17 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout x:Name="LostItemStackLayout" Padding="10">
-                                <Label Text="{Binding FoundType}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                FontAttributes="Bold"
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="18" />
-                                <Label Text="{Binding FoundDescription}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                                <Label Text="{Binding FoundLocation}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout x:Name="LostItemStackLayout" Padding="10" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding LostType}" d:Text="{Binding .}" LineBreakMode="NoWrap" FontAttributes="Bold" Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
+                                    <Label Text="{Binding LostDescription}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                    <Label Text="{Binding LostLocation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                </StackLayout>
+                                <StackLayout x:Name="MatchedItemStackLayout" Padding="10" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding FoundType}" d:Text="{Binding .}" LineBreakMode="NoWrap" FontAttributes="Bold" Style="{DynamicResource ListItemTextStyle}" FontSize="18" />
+                                    <Label Text="{Binding FoundDescription}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                    <Label Text="{Binding FoundLocation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

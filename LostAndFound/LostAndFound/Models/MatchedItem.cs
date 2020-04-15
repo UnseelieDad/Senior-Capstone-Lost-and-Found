@@ -53,6 +53,6 @@ namespace LostAndFound.Models
         public string LostLocation { get; set; }
 
         [JsonProperty("date_lost")]
-        public string DateLost { get; set; }
+        public DateTime DateLost { get; set; }
     }
 }
