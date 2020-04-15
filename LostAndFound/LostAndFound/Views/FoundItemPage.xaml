@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
+             x:Class="LostAndFound.Views.FoundItemPage"
+             Title="Found Item">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Submit" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="Email" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.Email}" Placeholder="Your Email"/>
+                <Label Text="Description" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Editor Text="{Binding Item.Description}" Placeholder="Item Description" Margin="0" />
+                <Label Text="Color" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Picker x:Name="ColorPicker" Title="Item Color"/>
+                <Label Text="Type" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Picker x:Name="TypePicker" Title="Item Type"/>
+                <Label Text="Location" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Picker x:Name="LocationPicker" Title="Item Location"/>
+                <Label Text="Date Found" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <DatePicker HorizontalOptions="Fill" Date="{Binding Item.DateLost}" MinimumDate="01/01/2020"/>
+                <Label Text="First Name" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.FirstName}" Placeholder="First Name"/>
+                <Label Text="Last Name" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Entry Text="{Binding Item.LastName}" Placeholder="Last Name"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
