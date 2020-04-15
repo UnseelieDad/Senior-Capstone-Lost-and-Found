@@ -1,0 +1,11 @@
+boto3==1.4.4
+botocore==1.5.95
+click==6.6
+docutils==0.16
+jmespath==0.9.5
+PyMySQL==0.9.3
+python-dateutil==2.8.1
+python-lambda==11.7.1
+PyYAML==5.1
+s3transfer==0.1.13
+six==1.14.0
