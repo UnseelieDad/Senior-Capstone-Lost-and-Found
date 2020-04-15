@@ -22,7 +22,8 @@ namespace LostAndFound.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Home" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Pin, Title="Admin" }
+                new HomeMenuItem {Id = MenuItemType.Pin, Title="Admin" },
+                new HomeMenuItem {Id = MenuItemType.ContactUs, Title="Contact Us"}
             };
 
             ListViewMenu.ItemsSource = menuItems;
