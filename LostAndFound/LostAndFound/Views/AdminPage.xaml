@@ -5,17 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
-             x:Class="LostAndFound.Views.AdminPage">
+             x:Class="LostAndFound.Views.AdminPage"
+             Title="Admin Area">
     <ContentPage.Content>
-        <StackLayout Spacing="0" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
+                <StackLayout Padding="40,30,40,30" Spacing="0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Frame  IsClippedToBounds="True" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,0,0,0" >
+                        <Label x:Name="AdminAreaLabel" FontSize="20" FontAttributes="Bold" Padding="15,15,15,15" BackgroundColor="{x:Static colors:ColorConstants.LightBlue}" TextColor="White" HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </StackLayout>
 
-            <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
-                <Button Text="View Lost Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="LostButtonClicked"/>
-                <Button Text="View Matched Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="MatchedButtonClicked"/>
+                <StackLayout Spacing="26" Padding="10,10,10,10" VerticalOptions="Center">
+                    <Button Text="View Lost Item Reports" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="LostButtonClicked"/>
+                    <Button Text="View Matched Items" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="MatchedButtonClicked"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
