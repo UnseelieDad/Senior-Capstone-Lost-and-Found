@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
              x:Class="LostAndFound.Views.MatchedItemsPage"
              Title="Matched Items">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}">
             <ListView x:Name="MatchedItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
@@ -31,6 +32,7 @@
                                     <Label Text="{Binding FoundDescription}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
                                     <Label Text="{Binding FoundLocation}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
                                 </StackLayout>
+                                <Label Text=">  " VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" FontSize="32" FontAttributes="Bold" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
