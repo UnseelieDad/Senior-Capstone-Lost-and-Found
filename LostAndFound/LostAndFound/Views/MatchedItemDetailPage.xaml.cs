@@ -1,4 +1,5 @@
-﻿using LostAndFound.ViewModels;
+﻿using LostAndFound.Services;
+using LostAndFound.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,9 @@ namespace LostAndFound.Views
             BindingContext = viewModel;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-
+            await Backend.SendEmailNotification(viewModel.Item);
         }
     }
 }
