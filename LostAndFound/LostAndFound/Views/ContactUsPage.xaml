@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
+             x:Class="LostAndFound.Views.ContactUsPage"
+             Title="Contact Us">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}">
+                <Label Text="Please reach out to our admin team if you have any comments or concerns about your items." FontSize="26" FontAttributes="Bold" Margin="40,20,40,10" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
+                <Label Text="LaTechLostAndFound@outlook.com" FontSize="19" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="10,20,10,10" TextColor="{x:Static colors:ColorConstants.LightBlue}"/>
+                <Label Text="We are based out of Nethken Hall: Room 132" FontSize="26" FontAttributes="Bold" Margin="40,20,40,10" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
+                <StackLayout Padding="40,20,40,20" Spacing="0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Frame  IsClippedToBounds="True" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,0,0,0" >
+                        <Label x:Name="TeamMemberTitleLabel" BackgroundColor="{x:Static colors:ColorConstants.LightBlue}" Padding="10,10,10,10" TextColor="White" FontAttributes="Bold" FontSize="26" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
