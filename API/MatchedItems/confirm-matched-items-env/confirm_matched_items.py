@@ -26,7 +26,4 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded.")
 
 # executes upon API event
 def handler(event, context):
-    # Your code goes here!
-    e = event.get("e")
-    pi = event.get("pi")
-    return e + pi
+    pass
