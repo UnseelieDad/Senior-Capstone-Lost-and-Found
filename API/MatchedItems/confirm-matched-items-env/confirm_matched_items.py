@@ -25,5 +25,25 @@ except:
 logger.info("SUCCESS: Connection to RDS mysql instance succeeded.")
 
 # executes upon API event
+
+# workflow:
+# Confirm match button clicked,
+# Sends update request for the two ids?
+# table doesn't show confirmed matches?
+# UPDATE MatchedItems SET Confrimed = 1 WHERE id = ...
+# takes the two ids
+
 def handler(event, context):
-    pass
+    data = {
+        "update_id": event['id']
+    }
+
+    with connection.cursor as cursor:
+        sql = f"update MatchedItems set Confirmed = 1 where id = {data['update_id']}"
+        cursor.execute(sql)
+        connection.commit()
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps(data)
+    }
