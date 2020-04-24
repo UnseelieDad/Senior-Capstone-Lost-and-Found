@@ -38,7 +38,7 @@ def handler(event, context):
         "update_id": event['id']
     }
 
-    with connection.cursor as cursor:
+    with connection.cursor() as cursor:
         sql = f"update MatchedItems set Confirmed = 1 where id = {data['update_id']}"
         cursor.execute(sql)
         connection.commit()

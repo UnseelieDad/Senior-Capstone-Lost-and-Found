@@ -3,7 +3,7 @@ region: us-east-2
 function_name: ConfirmMatchedItems
 handler: confirm_matched_items.handler
 description: My first lambda function
-runtime: python3.7.5
+runtime: python3.8
 role: MySQLDBAccess
 
 # S3 upload requires appropriate role with s3:PutObject permission
