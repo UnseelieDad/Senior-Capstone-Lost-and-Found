@@ -39,8 +39,7 @@ def handler(event, context):
     }
 
     with connection.cursor() as cursor:
-        sql = f"update MatchedItems set Confirmed = 1 where id = {data['update_id']}"
-        cursor.execute(sql)
+        cursor.execute(f"update MatchedItems set Confirmed = 1 where id = {data['update_id']}")
         connection.commit()
 
     return {
