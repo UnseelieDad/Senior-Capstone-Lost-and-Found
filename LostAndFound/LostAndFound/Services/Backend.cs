@@ -92,6 +92,7 @@ namespace LostAndFound.Services
 
         public static async Task<List<MatchedItem>> GetMatchedItems()
         {
+            var update = await DoRequest<Response>(HttpMethod.Put, matchedItemsUrl);
             var response = await DoRequest<List<MatchedItem>>(HttpMethod.Get, matchedItemsUrl);
             return response;
         }
@@ -110,7 +111,7 @@ namespace LostAndFound.Services
 
         public static async Task<Response> ConfirmMatch(MatchedItem i)
         {
-            var response = await DoRequest<Response>(new HttpMethod("PATCH"), matchedItemsUrl, i.MatchId);
+            var response = await DoRequest<Response>(new HttpMethod("PATCH"), matchedItemsUrl, new { match_id = i.MatchId });
             return response;
         }
 

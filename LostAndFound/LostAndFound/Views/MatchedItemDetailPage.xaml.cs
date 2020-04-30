@@ -33,7 +33,14 @@ namespace LostAndFound.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            await Backend.ConfirmMatch(viewModel.Item);
             await Backend.SendEmailNotification(viewModel.Item);
+
+            for (var counter = 1; counter < 2; counter++)
+            {
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            }
+            await Navigation.PopAsync();
         }
     }
 }
