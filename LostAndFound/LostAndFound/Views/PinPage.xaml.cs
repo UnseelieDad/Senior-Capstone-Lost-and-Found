@@ -1,4 +1,5 @@
-﻿using LostAndFound.Models;
+﻿using Acr.UserDialogs;
+using LostAndFound.Models;
 using LostAndFound.Services;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,9 @@ namespace LostAndFound.Views
             if (sender is Entry entry)
             {
                 var encrypted = HashUtilities.GetHashFromString(entry.Text);
+                UserDialogs.Instance.ShowLoading();
                 var response = await Backend.AdminLogin(encrypted);
+                UserDialogs.Instance.HideLoading();
                 if (response != null)
                 {
                     if (!response.Body.Equals("Incorrect PIN provided"))

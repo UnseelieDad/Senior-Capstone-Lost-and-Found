@@ -1,4 +1,5 @@
-﻿using LostAndFound.Models;
+﻿using Acr.UserDialogs;
+using LostAndFound.Models;
 using LostAndFound.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -48,17 +49,6 @@ namespace LostAndFound.Views
                         NoLostItemsLabel.IsVisible = true;
                     }
                 }));
-
-            //Device.StartTimer(TimeSpan.FromSeconds(10), () =>
-            //{
-            //    if (viewModel.Items.Count == 0)
-            //    {
-            //        MatchedItemsListView.IsVisible = false;
-            //        NoLostItemsLabel.IsVisible = true;
-            //    }
-
-            //    return false;
-            //});
         }
     }
 }

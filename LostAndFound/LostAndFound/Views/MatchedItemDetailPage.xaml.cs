@@ -1,4 +1,5 @@
-﻿using LostAndFound.Services;
+﻿using Acr.UserDialogs;
+using LostAndFound.Services;
 using LostAndFound.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,12 @@ namespace LostAndFound.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            UserDialogs.Instance.ShowLoading();
             await Backend.ConfirmMatch(viewModel.Item);
             await Backend.SendEmailNotification(viewModel.Item);
+            UserDialogs.Instance.HideLoading();
+
+            await DisplayAlert("Match confirmed", "The match has been confirmed and the owner of the item has been notified.", "Ok");
 
             for (var counter = 1; counter < 2; counter++)
             {
