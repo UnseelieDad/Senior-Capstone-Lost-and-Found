@@ -35,11 +35,11 @@ def handler(event, context):
 
     with connection.cursor() as cursor:
 
-        cursor.execute("SELECT mi.id FROM MatchedItems mi")
+        cursor.execute("SELECT mi.id FROM MatchedItems mi Where mi.Confirmed = 0")
         for row in cursor:
             match_ids.append(row[0])
 
-        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Found f WHERE f.id in (SELECT FoundItem from MatchedItems mi))")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Found f WHERE f.id in (SELECT FoundItem from MatchedItems mi Where mi.Confirmed = 0))")
         for row in cursor:
             found_match = {
                 "id": row[0],
@@ -53,7 +53,7 @@ def handler(event, context):
             }
             found_matches.append(found_match)
 
-        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Lost l WHERE l.id in (SELECT LostItem from MatchedItems mi))")
+        cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item FROM Lost l WHERE l.id in (SELECT LostItem from MatchedItems mi Where mi.Confirmed = 0))")
         connection.commit()
         for row in cursor:
             lost_match = {
