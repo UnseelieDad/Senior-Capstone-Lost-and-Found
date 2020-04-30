@@ -40,18 +40,25 @@ namespace LostAndFound.Views
             base.OnAppearing();
 
             if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-
-            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
-            {
-                if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute((Action)(() =>
                 {
-                    MatchedItemsListView.IsVisible = false;
-                    NoLostItemsLabel.IsVisible = true;
-                }
+                    if (viewModel.Items.Count == 0)
+                    {
+                        MatchedItemsListView.IsVisible = false;
+                        NoLostItemsLabel.IsVisible = true;
+                    }
+                }));
 
-                return false;
-            });
+            //Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            //{
+            //    if (viewModel.Items.Count == 0)
+            //    {
+            //        MatchedItemsListView.IsVisible = false;
+            //        NoLostItemsLabel.IsVisible = true;
+            //    }
+
+            //    return false;
+            //});
         }
     }
 }

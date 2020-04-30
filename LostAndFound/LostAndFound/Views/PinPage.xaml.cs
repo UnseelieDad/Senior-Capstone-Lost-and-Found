@@ -14,8 +14,6 @@ namespace LostAndFound.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PinPage : ContentPage
     {
-        private const string Pin = "8671";
-
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
 
         public PinPage()
@@ -29,9 +27,20 @@ namespace LostAndFound.Views
             {
                 var encrypted = HashUtilities.GetHashFromString(entry.Text);
                 var response = await Backend.AdminLogin(encrypted);
-                if (!response.Body.Equals("Incorrect PIN provided"))
+                if (response != null)
                 {
-                    await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
+                    if (!response.Body.Equals("Incorrect PIN provided"))
+                    {
+                        await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", response.Body, "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Unable to connect.", "OK");
                 }
             }
         }

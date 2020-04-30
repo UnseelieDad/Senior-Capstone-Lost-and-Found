@@ -102,6 +102,12 @@ namespace LostAndFound.Services
             return response;
         }
 
+        public static async Task<Response> ConfirmMatch(MatchedItem i)
+        {
+            var response = await DoRequest<Response>(new HttpMethod("PATCH"), matchedItemsUrl, i.MatchId);
+            return response;
+        }
+
         public static Task SendEmailNotification(MatchedItem item)
         {
             var date = $"{item.DateLost.Month}/{item.DateLost.Day}/{item.DateLost.Year.ToString("D4")}";

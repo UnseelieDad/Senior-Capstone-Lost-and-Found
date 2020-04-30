@@ -49,18 +49,14 @@ namespace LostAndFound.Views
             base.OnAppearing();
 
             if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-
-            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
-            {
-                if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute((Action)(() =>
                 {
-                    LostItemsListView.IsVisible = false;
-                    NoLostItemsLabel.IsVisible = true;
-                }
-
-                return false;
-            });
+                    if (viewModel.Items.Count == 0)
+                    {
+                        LostItemsListView.IsVisible = false;
+                        NoLostItemsLabel.IsVisible = true;
+                    }
+                }));
         }
     }
 }
