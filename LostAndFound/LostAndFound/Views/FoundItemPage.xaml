@@ -5,14 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
-             x:Class="LostAndFound.Views.NewItemPage"
-             Title="Lost Item">
-    
+             x:Class="LostAndFound.Views.FoundItemPage"
+             Title="Found Item">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Submit" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="20" Padding="15">
@@ -26,7 +26,7 @@
                 <Picker x:Name="TypePicker" Title="Item Type"/>
                 <Label Text="Location" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
                 <Picker x:Name="LocationPicker" Title="Item Location"/>
-                <Label Text="Date Lost" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
+                <Label Text="Date Found" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
                 <DatePicker HorizontalOptions="Fill" Date="{Binding Item.DateLost}" MinimumDate="01/01/2020"/>
                 <Label Text="First Name" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
                 <Entry Text="{Binding Item.FirstName}" Placeholder="First Name"/>
@@ -35,5 +35,5 @@
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-    
+
 </ContentPage>

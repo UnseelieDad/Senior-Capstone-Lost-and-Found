@@ -102,6 +102,12 @@ namespace LostAndFound.Services
             return response;
         }
 
+        public static async Task<Response> SubmitFoundItem(Item i)
+        {
+            var response = await DoRequest<Response>(HttpMethod.Post, foundItemsUrl, i);
+            return response;
+        }
+
         public static async Task<Response> ConfirmMatch(MatchedItem i)
         {
             var response = await DoRequest<Response>(new HttpMethod("PATCH"), matchedItemsUrl, i.MatchId);

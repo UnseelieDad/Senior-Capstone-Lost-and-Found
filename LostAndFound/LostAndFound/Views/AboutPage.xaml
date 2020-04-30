@@ -7,76 +7,19 @@
              xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
              x:Class="LostAndFound.Views.AboutPage"
              xmlns:vm="clr-namespace:LostAndFound.ViewModels"
-             Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             Title="About">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label FontSize="22">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
-                                <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="This app is written in C# and native APIs using the" />
-                                <Span Text=" " />
-                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
-                                <Span Text="." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="It shares code with its" />
-                                <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
-                                <Span Text=" " />
-                                <Span Text="versions." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}">
+                <Label Text="This mobile application manages and matches lost and found items across the campus of Louisiana Tech University." FontSize="26" FontAttributes="Bold" Margin="40,20,40,10" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
+                <Label Text="All items should be turned in or picked up from the administration desk in Nethken 132." FontSize="26" FontAttributes="Bold" Margin="40,20,40,0" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
+                <StackLayout Padding="40,20,40,20" Spacing="0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Frame  IsClippedToBounds="True" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,0,0,0" >
+                        <Label Text="GO DAWGS!" FontSize="42" FontAttributes="Bold" Padding="15,15,15,15" TextColor="{x:Static colors:ColorConstants.LightBlue}" HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
-    </Grid>
-    
+    </ContentPage.Content>
 </ContentPage>

@@ -15,7 +15,9 @@ namespace LostAndFound.Views.UIStandards
         public static Color TextGrayColor1 = Color.FromHex("#afb1b4");
         //003087
         public static Color TechBlue = Color.FromHex("#003087");
-        //dde5e5
-        public static Color BackgroundColor = Color.FromHex("#dde5e5");
+        //#edf5f5
+        public static Color BackgroundColor = Color.FromHex("#edf5f5");
+        //#AD4FF
+        public static Color LightBlue = Color.FromHex("#91B8FF");
     }
 }
