@@ -8,7 +8,7 @@
              x:Class="LostAndFound.Views.AdminPage">
     <ContentPage.Content>
         <StackLayout Spacing="0" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Welcome to the admin area. From here you can view all lost items as well as matched items."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
