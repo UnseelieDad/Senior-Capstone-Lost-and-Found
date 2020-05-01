@@ -13,7 +13,7 @@
             <Image
                 x:Name="MenuImage"
                 HeightRequest="150"
-                Margin="0"
+                Margin="15,15,15,15"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Source="LaTechLogo.png"/>
@@ -30,7 +30,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Label Text="{Binding Title}" d:Text="{Binding .}" FontSize="26" FontAttributes="Bold"/>
+                            <Label Text="{Binding Title}" d:Text="{Binding .}" Padding="30,5,5,5" FontSize="26" FontAttributes="Bold"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

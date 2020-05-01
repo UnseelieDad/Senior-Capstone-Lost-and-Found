@@ -4,18 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LostAndFound.Views.PinPage">
+             xmlns:colors="clr-namespace:LostAndFound.Views.UIStandards"
+             x:Class="LostAndFound.Views.PinPage"
+             Title="PIN">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry IsPassword="True"
+        <StackLayout Spacing="20" Padding="10,10,10,10" BackgroundColor="{x:Static colors:ColorConstants.BackgroundColor}" Orientation="Vertical">
+            <Label Text="Please Enter Your Assigned Pin To Enter The Admin Area." FontSize="26" FontAttributes="Bold" Margin="40,20,40,20" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
+            <Entry x:Name="PinEntry"
+                   IsPassword="True"
                    Keyboard="Numeric"
                    MaxLength="6"
                    Placeholder="PIN"
                    Completed="Entry_Completed"
                    HorizontalTextAlignment="Center"
                    WidthRequest="200"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"/>
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Button Text="Login" FontSize="28" FontAttributes="Bold" Margin="0,20,0,0" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Entry_Completed"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
