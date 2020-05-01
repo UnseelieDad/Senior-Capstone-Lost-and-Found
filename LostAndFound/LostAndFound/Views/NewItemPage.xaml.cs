@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using LostAndFound.Models;
 using LostAndFound.Services;
+using Acr.UserDialogs;
 
 namespace LostAndFound.Views
 {
@@ -140,7 +141,9 @@ namespace LostAndFound.Views
             }
             //Not needed because it is not being added to a list, will be needed in the admin area
             ///MessagingCenter.Send(this, "AddItem", Item);
+            UserDialogs.Instance.ShowLoading();
             await Backend.SubmitLostItem(Item);
+            UserDialogs.Instance.HideLoading();
             await DisplayAlert("Item Submitted", "Thank you for submitting a lost item. When your item is found you will recieve an email with more details. \n \n Questions? Please go to Netheken 132.", "Dismiss");
             await Navigation.PopToRootAsync();
         }

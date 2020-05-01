@@ -12,6 +12,8 @@ namespace LostAndFound.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AdminPage : ContentPage
     {
+        // test comment
+
         public AdminPage()
         {
             InitializeComponent();

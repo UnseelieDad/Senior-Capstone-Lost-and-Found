@@ -29,8 +29,8 @@ namespace LostAndFound.Services
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential
                 {
-                    UserName = "latechlostandfound@outlook.com",
-                    Password = "Geauxbulldogs34"
+                    UserName = Encoding.UTF8.GetString(Convert.FromBase64String("bGF0ZWNobG9zdGFuZGZvdW5kQG91dGxvb2suY29t")),
+                    Password = Encoding.UTF8.GetString(Convert.FromBase64String("SWxvdmV4YW1hcmluNjM="))
                 }
             };
         }
@@ -92,6 +92,7 @@ namespace LostAndFound.Services
 
         public static async Task<List<MatchedItem>> GetMatchedItems()
         {
+            var update = await DoRequest<Response>(HttpMethod.Put, matchedItemsUrl);
             var response = await DoRequest<List<MatchedItem>>(HttpMethod.Get, matchedItemsUrl);
             return response;
         }
@@ -105,6 +106,12 @@ namespace LostAndFound.Services
         public static async Task<Response> SubmitFoundItem(Item i)
         {
             var response = await DoRequest<Response>(HttpMethod.Post, foundItemsUrl, i);
+            return response;
+        }
+
+        public static async Task<Response> ConfirmMatch(MatchedItem i)
+        {
+            var response = await DoRequest<Response>(new HttpMethod("PATCH"), matchedItemsUrl, new { match_id = i.MatchId });
             return response;
         }
 

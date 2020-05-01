@@ -19,7 +19,7 @@ namespace LostAndFound.ViewModels
         public MatchedItemsViewModel()
         {
             Items = new ObservableCollection<MatchedItem>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async (object callback) => await ExecuteLoadItemsCommand(callback as Action));
 
             /*MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
@@ -29,7 +29,7 @@ namespace LostAndFound.ViewModels
             });*/
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task ExecuteLoadItemsCommand(Action callback)
         {
             if (IsBusy)
                 return;
@@ -40,10 +40,15 @@ namespace LostAndFound.ViewModels
             {
                 Items.Clear();
                 var items = await Backend.GetMatchedItems();
-                foreach (var item in items)
+                if (items != null)
                 {
-                    Items.Add(item);
+                    foreach (var item in items)
+                    {
+                        Items.Add(item);
+                    }
                 }
+
+                callback?.Invoke();
             }
             catch (Exception ex)
             {
