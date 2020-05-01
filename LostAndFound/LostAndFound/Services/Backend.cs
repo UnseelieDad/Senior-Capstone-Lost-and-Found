@@ -29,6 +29,7 @@ namespace LostAndFound.Services
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential
                 {
+                    // b64 so we don't get scraped
                     UserName = Encoding.UTF8.GetString(Convert.FromBase64String("bGF0ZWNobG9zdGFuZGZvdW5kQG91dGxvb2suY29t")),
                     Password = Encoding.UTF8.GetString(Convert.FromBase64String("SWxvdmV4YW1hcmluNjMh"))
                 }
