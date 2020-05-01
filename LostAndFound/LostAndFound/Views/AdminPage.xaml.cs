@@ -15,6 +15,7 @@ namespace LostAndFound.Views
         public AdminPage()
         {
             InitializeComponent();
+            AdminAreaLabel.Text = "Welcome to the Lost and Found Admin Area. \n \n Here You Can View: Currently Lost Items and Potentially Matched Items. \n \n The system automatically emails the owner with pickup information when item matches are confirmed.";
         }
 
         private async void LostButtonClicked(object sender, EventArgs e)
