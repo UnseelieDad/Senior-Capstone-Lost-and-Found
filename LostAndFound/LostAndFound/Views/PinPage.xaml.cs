@@ -14,26 +14,24 @@ namespace LostAndFound.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PinPage : ContentPage
     {
-        private const string Pin = "8671";
 
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
 
         public PinPage()
         {
             InitializeComponent();
+            PinEntry.Focus();
         }
 
         private async void Entry_Completed(object sender, EventArgs e)
         {
-            if (sender is Entry entry)
+            var encrypted = HashUtilities.GetHashFromString(PinEntry.Text);
+            var response = await Backend.AdminLogin(encrypted);
+            if (!response.Body.Equals("Incorrect PIN provided"))
             {
-                var encrypted = HashUtilities.GetHashFromString(entry.Text);
-                var response = await Backend.AdminLogin(encrypted);
-                if (!response.Body.Equals("Incorrect PIN provided"))
-                {
-                    await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
-                }
+                await RootPage.NavigateFromMenu((int)MenuItemType.Admin);
             }
+            PinEntry.Text = "";
         }
     }
 }

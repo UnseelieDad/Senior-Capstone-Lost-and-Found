@@ -42,7 +42,7 @@
                 </StackLayout>
             </StackLayout>
 
-            <Button Text="Confirm Match" FontSize="28" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Button_Clicked"/>
+            <Button Text="Confirm Match" FontSize="28" VerticalOptions="EndAndExpand" FontAttributes="Bold" HeightRequest="75" TextColor="{x:Static colors:ColorConstants.TechBlue}" BackgroundColor="White" Padding="25,0,25,0" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

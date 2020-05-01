@@ -9,8 +9,8 @@
              Title="Lost Item">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Submit" Clicked="Save_Clicked" />
+        <ToolbarItem x:Name="CancelButton" Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem x:Name="SubmitButton" Text="Submit" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -27,7 +27,7 @@
                 <Label Text="Location" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
                 <Picker x:Name="LocationPicker" Title="Item Location"/>
                 <Label Text="Date Lost" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
-                <DatePicker HorizontalOptions="Fill" Date="{Binding Item.DateLost}" MinimumDate="01/01/2020"/>
+                <DatePicker x:Name="LostDatePicker" HorizontalOptions="Fill" Date="{Binding Item.DateLost}" MinimumDate="01/01/2020"/>
                 <Label Text="First Name" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />
                 <Entry Text="{Binding Item.FirstName}" Placeholder="First Name"/>
                 <Label Text="Last Name" FontSize="Medium" TextColor="{x:Static colors:ColorConstants.TechBlue}" FontAttributes="Bold" />

@@ -23,6 +23,7 @@ namespace LostAndFound.Views
             InitializeComponent();
             Item = new Item { };
             Item.DateLost = DateTime.Today;
+            FoundDatePicker.MaximumDate = DateTime.Today;
             BindingContext = this;
             ColorPickerSetup();
             TypePickerSetup();
