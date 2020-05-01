@@ -15,9 +15,7 @@
                 <Label Text="This mobile application manages and matches lost and found items across the campus of Louisiana Tech University." FontSize="26" FontAttributes="Bold" Margin="40,20,40,10" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
                 <Label Text="All items should be turned in or picked up from the administration desk in Nethken 132." FontSize="26" FontAttributes="Bold" Margin="40,20,40,0" TextColor="{x:Static colors:ColorConstants.TechBlue}"/>
                 <StackLayout Padding="40,20,40,20" Spacing="0" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Frame  IsClippedToBounds="True" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,0,0,0" >
-                        <Label Text="GO DAWGS!" FontSize="42" FontAttributes="Bold" Padding="15,15,15,15" TextColor="{x:Static colors:ColorConstants.LightBlue}" HorizontalTextAlignment="Center"/>
-                    </Frame>
+                    <Label Text="GO DAWGS!" FontSize="42" FontAttributes="Bold" Padding="15,15,15,15" TextColor="{x:Static colors:ColorConstants.LightBlue}" HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

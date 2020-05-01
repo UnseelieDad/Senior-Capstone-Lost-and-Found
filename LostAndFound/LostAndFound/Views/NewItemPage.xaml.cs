@@ -19,6 +19,7 @@ namespace LostAndFound.Views
             InitializeComponent();
             Item = new Item { };
             Item.DateLost = DateTime.Today;
+            LostDatePicker.MaximumDate = DateTime.Today;
             BindingContext = this;
             ColorPickerSetup();
             TypePickerSetup();
@@ -129,6 +130,7 @@ namespace LostAndFound.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+            SubmitButton.IsEnabled = false;
             Item.CreateDate = DateTime.Today;
             Item.Status = "Lost";
             if (String.IsNullOrEmpty(Item.LastName) || String.IsNullOrEmpty(Item.Color) || String.IsNullOrEmpty(Item.Description) || String.IsNullOrEmpty(Item.Email) || String.IsNullOrEmpty(Item.FirstName) || String.IsNullOrEmpty(Item.Location) || String.IsNullOrEmpty(Item.Type))
