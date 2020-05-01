@@ -6771,6 +6771,9 @@ namespace LostAndFound.Droid
 			// aapt resource value: 0x7F0C0002
 			public const int launcher_foreground = 2131492866;
 			
+			// aapt resource value: 0x7F0C0003
+			public const int my_icon = 2131492867;
+			
 			static Mipmap()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
