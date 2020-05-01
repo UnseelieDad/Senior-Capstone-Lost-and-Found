@@ -38,7 +38,7 @@ namespace LostAndFound.Views
                 return;
             }
 
-            var encrypted = HashUtilities.GetHashFromString(entry.Text);
+            var encrypted = HashUtilities.GetHashFromString(PinEntry.Text);
             UserDialogs.Instance.ShowLoading();
             var response = await Backend.AdminLogin(encrypted);
             UserDialogs.Instance.HideLoading();
