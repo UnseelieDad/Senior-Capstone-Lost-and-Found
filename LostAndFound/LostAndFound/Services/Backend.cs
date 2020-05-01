@@ -30,7 +30,7 @@ namespace LostAndFound.Services
                 Credentials = new NetworkCredential
                 {
                     UserName = Encoding.UTF8.GetString(Convert.FromBase64String("bGF0ZWNobG9zdGFuZGZvdW5kQG91dGxvb2suY29t")),
-                    Password = Encoding.UTF8.GetString(Convert.FromBase64String("SWxvdmV4YW1hcmluNjM="))
+                    Password = Encoding.UTF8.GetString(Convert.FromBase64String("SWxvdmV4YW1hcmluNjMh"))
                 }
             };
         }
