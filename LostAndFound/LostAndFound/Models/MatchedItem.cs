@@ -7,6 +7,9 @@ namespace LostAndFound.Models
 {
     public class MatchedItem
     {
+        [JsonProperty("match_id")]
+        public int MatchId { get; set; }
+
         [JsonProperty("found_id")]
         public int FoundId { get; set; }
 

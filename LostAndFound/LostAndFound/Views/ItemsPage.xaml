@@ -41,7 +41,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Label x:Name="NoLostItemsLabel" Text="No lost items." IsVisible="False"/>
+        <Label x:Name="NoLostItemsLabel" Text="No lost items." IsVisible="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
     </StackLayout>
     
 </ContentPage>
