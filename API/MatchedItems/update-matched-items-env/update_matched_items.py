@@ -31,8 +31,10 @@ def handler(event, context):
     lost_items = []
     found_items = []
     matches = []
+    new_matches = []
+    table_matches = []
     with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM MatchedItems")
+        #cursor.execute("DELETE FROM MatchedItems")
         
         cursor.execute("SELECT * FROM Item i WHERE i.id in (SELECT Item from Lost l)")
         for row in cursor:
@@ -58,20 +60,32 @@ def handler(event, context):
         for litem in lost_items:
             for fitem in found_items:
                 if fitem['color'] == litem['color'] and fitem['type'] == litem['type'] and fitem['location'] == litem['location']:
+                    
+                    cursor.execute("Select f.id From Found f Where f.Item = {}".format(fitem["id"]))
+                    found_item = cursor.fetchone()[0]
+                    cursor.execute("Select l.id From Lost l Where l.Item = {}".format(litem["id"]))
+                    lost_item = cursor.fetchone()[0]
+
                     match = {
-                        "FoundItem": fitem["id"],
-                        "LostItem": litem["id"]
+                        "FoundItem": found_item,
+                        "LostItem": lost_item
                     }
                     matches.append(match)
-                    cursor.execute("Select f.id From Found f Where f.Item = {}".format(match["FoundItem"]))
-                    found_item = cursor.fetchone()
-                    cursor.execute("Select l.id From Lost l Where l.Item = {}".format(match["LostItem"]))
-                    lost_item = cursor.fetchone()
-                    cursor.execute("Insert into MatchedItems (FoundItem, LostItem) values (%s, %s)", (found_item, lost_item))
 
+        cursor.execute("SELECT mi.FoundItem, mi.LostItem FROM MatchedItems mi")
+        for row in cursor:
+            table_matches.append((row[0], row[1]))
+        
+        for match in matches:
+            if (match["FoundItem"], match["LostItem"]) in table_matches:
+                continue
+            else:
+                cursor.execute("Insert into MatchedItems (FoundItem, LostItem) values (%s, %s)", (match["FoundItem"], match["LostItem"]))
+                new_matches.append(match)
+        
         connection.commit()
 
     return {
         'statusCode': 200,
-        'body': json.dumps(matches)
+        'body': json.dumps(new_matches)
     }

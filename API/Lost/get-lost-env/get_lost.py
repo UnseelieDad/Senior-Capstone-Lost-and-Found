@@ -42,8 +42,9 @@ def handler(event, context):
                 "type": row[5],
                 "location": row[6],
                 "date_lost": str(row[7]),
-                "first_name": row[8],
-                "last_name": row[9]
+                "status": row[8],
+                "first_name": row[9],
+                "last_name": row[10]
             }
             records.append(record)
 
