@@ -1,2 +1,3 @@
 # Senior-Capstone-Lost-and-Found
-Creating a lost and found app to use on La Tech's campus for Senior Capstone
+A mobile app for IOS and Andriod that implements lost and found system to use on La Tech's campus for Senior Capstone.
+This project uses C#, Xamarin Framework, AWS, Python, and MySQL.
