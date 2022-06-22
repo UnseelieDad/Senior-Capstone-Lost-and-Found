@@ -19,7 +19,7 @@
     <PackageReference Include="AWSSDK.MobileAnalytics" Version="3.3.100.129" />
     <PackageReference Include="AWSSDK.S3" Version="3.3.110.20" />
     <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.118" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
   </ItemGroup>
